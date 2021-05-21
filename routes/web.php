@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userAuth;
+use App\Http\Controllers\listBuku;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,3 +35,5 @@ Route::get('logout', function() {
     }
     return redirect('login');
 });
+
+Route::get('daftar_buku', [listbuku::class, 'list_buku']);
