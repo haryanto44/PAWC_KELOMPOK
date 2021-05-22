@@ -4,7 +4,7 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <link rel="icon" href="{{asset('favicon.ico') }}" type="image/x-icon"/>
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="{{ asset('vendor/css/navbar-top-fixed.css') }}">
@@ -15,7 +15,7 @@
         <!-- bagian navbar -->
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
-            <a class="navbar-brand" href="#">OURBOOKS</a>
+            <a class="navbar-brand" href="#"><img src="{{asset('asset/img/icons8-book-shelf-64.png')}}" width="30" height="30" class="d-inline-block align-top" alt="">OURBOOKS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>

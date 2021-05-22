@@ -6,37 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="{{asset('asset/vendor/css/login_style.css')}}">
     <title>Login</title>
 </head>
 <body>
     <!-- bagian form -->
-    <form action="login" method="POST">
+    <form class="form-signin" action="login" method="POST">
         @csrf <!--ini bagian untuk memproteksi laravel app dari serangan CSRF-->
-        <div class="limiter">
-            <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
-                <div class="wrap-login100 p-t-30 p-b-50">
-                    <span class="login100-form-title p-b-41">
-                        Account Login
-                    </span>
-                    <form class="login100-form validate-form p-b-33 p-t-5">
-                        <div class="wrap-input100 validate-input" data-validate = "Enter username">
-                            <input class="input100" type="text" name="username" placeholder="User name">
-                            <span class="focus-input100" data-placeholder="&#xe82a;"></span>
-                        </div>
-                        <div class="wrap-input100 validate-input" data-validate="Enter password">
-                            <input class="input100" type="password" name="pass" placeholder="Password">
-                            <span class="focus-input100" data-placeholder="&#xe80f;"></span>
-                        </div>
-                        <div class="container-login100-form-btn m-t-32">
-                            <button type="submit" class="login100-form-btn">
-                                Login
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+        <div class="text-center mb-4">
+            <img class="mb-4" src="{{asset('asset/img/icons8-book-shelf-64.png')}}" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-normal">OURBOOKS</h1>
+            <p>Masuk untuk melanjutkan. <br>Belum punya akun? <a href="https://caniuse.com/#feat=css-placeholder-shown">Daftar disini</a></p>
         </div>
+        <form class="login100-form validate-form p-b-33 p-t-5">
+            <div class="form-label-group" data-validate = "Enter username">
+                <input id="inputUsername" type="text" name="username" placeholder="User name" class="form-control" placeholder="Username" required autofocus>
+                <label for="inputUsername">Username</label>
+            </div>
+            <div class="form-label-group" data-validate="Enter password">
+                <input id="inputPass" type="password" name="pass" placeholder="Password" class="form-control" placeholder="Password" required>
+                <label for="inputPass">Password</label>
+            </div>
+            <button class="btn btn-lg btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+        </form>
+        
     </form>
     <!-- akhir bagian form  -->
 
