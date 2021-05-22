@@ -31,9 +31,9 @@ Route::get('login', function() {
 
 Route::get('logout', function() {
     if(session()->has('user')){
-        session()->pull('user');
+        session()->forget('user');
     }
-    return redirect('login');
+    return redirect('');
 });
 
 Route::get('daftar_buku', [listbuku::class, 'list_buku']);
