@@ -1,8 +1,12 @@
 <?php
+namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userAuth;
 use App\Http\Controllers\listBuku;
+use Illuminate\Http\Request;
+use app\Http\Controllers\Buku_controller;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +26,7 @@ Route::get('/', function () {
 Route::post('login', [userAuth::class, "UserLogin"]);
 Route::view('profile', 'profile');
 
+
 Route::get('login', function() {
     if(session()->has('user')){
         return redirect('profile');
@@ -36,4 +41,15 @@ Route::get('logout', function() {
     return redirect('');
 });
 
-Route::get('daftar_buku', [listbuku::class, 'list_buku']);
+// list buku
+	Route::get('profile/buku','Buku_controller@index');
+	Route::get('profile/buku/add','Buku_controller@add');
+	Route::post('profile/buku/add','Buku_controller@store');
+	Route::get('profile/buku/{id}','Buku_controller@edit');
+	Route::put('profile/buku/{id}','Buku_controller@update');
+	Route::delete('profile/buku/{id}','Buku_controller@delete');
+
+ // peminjaman buku
+    Route::get('pinjam-buku/{id}','Peminjaman_controller@store');
+
+Route::get('profile/daftar_buku', [listbuku::class, 'list_buku']);
